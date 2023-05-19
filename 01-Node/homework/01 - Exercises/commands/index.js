@@ -17,7 +17,7 @@ function echo(print,args) {
 function ls(print) {
     fs.readdir(".",(error,files)=>{
         if(error) throw new Error(error)
-        print(String(files.join(" ")))
+        print(files.join(" "))
     })
 }
 
@@ -31,14 +31,14 @@ function cat(print,args) {
 function head(print,args) {
     fs.readFile(args,"utf-8",(error,data)=>{
         if(error) throw new Error(error)
-        else print(String(data.split("\n")[0]))
+        else print(data.split("\n")[0])
     })
 }
 
 function tail(print,args) {
     fs.readFile(args,"utf-8",(error,data)=>{
         if(error) throw new Error(error)
-        else print(String((data.split("\n").slice(-1))).trim())
+        else print(data.split("\n").at(-1))
 })
 }
 
