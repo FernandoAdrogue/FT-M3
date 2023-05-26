@@ -28,11 +28,11 @@ function problemA() {
 
   // promise version
   // Tu código acá:
-  exerciseUtils.promisifiedReadFile("poem-two/stanza-01.txt")
+  const p1=exerciseUtils.promisifiedReadFile("poem-two/stanza-01.txt")
   .then((stanza1)=>exerciseUtils.blue(stanza1))
-  exerciseUtils.promisifiedReadFile("poem-two/stanza-02.txt")
+  const p2=exerciseUtils.promisifiedReadFile("poem-two/stanza-02.txt")
   .then((stanza2)=>exerciseUtils.blue(stanza2))
-  Promise.all([]).then(()=>console.log("done"))
+  Promise.all([p1,p2]).then(()=>console.log("done"))
 }
 
 function problemB() {
